@@ -375,18 +375,20 @@ class WP_Widget_Meta extends WP_Widget {
 	public function widget( $args, $instance ) {
 
 		/** This filter is documented in wp-includes/default-widgets.php */
-		$title = apply_filters( 'widget_title', empty($instance['title']) ? __( 'Meta' ) : $instance['title'], $instance, $this->id_base );
+// 		$title = apply_filters( 'widget_title', empty($instance['title']) ? __( 'Meta' ) : $instance['title'], $instance, $this->id_base );
 
-		echo $args['before_widget'];
-		if ( $title ) {
-			echo $args['before_title'] . $title . $args['after_title'];
-		}
+// 		echo $args['before_widget'];
+// 		if ( $title ) {
+//  			echo $args['before_title'] . $title . $args['after_title'];
+// 		}
 ?>
 			<ul>
-			<?php wp_register(); ?>
-			<li><?php wp_loginout(); ?></li>
-			<li><a href="<?php bloginfo('rss2_url'); ?>"><?php _e('Entries <abbr title="Really Simple Syndication">RSS</abbr>'); ?></a></li>
+			<?php wp_loginout(); ?>
+<!--		<?php wp_register(); ?>
+    		<li><?php wp_loginout(); ?></li>
+ 			<li><a href="<?php bloginfo('rss2_url'); ?>"><?php _e('Entries <abbr title="Really Simple Syndication">RSS</abbr>'); ?></a></li>
 			<li><a href="<?php bloginfo('comments_rss2_url'); ?>"><?php _e('Comments <abbr title="Really Simple Syndication">RSS</abbr>'); ?></a></li>
+			 -->
 <?php
 			/**
 			 * Filter the "Powered by WordPress" text in the Meta widget.
@@ -395,12 +397,13 @@ class WP_Widget_Meta extends WP_Widget {
 			 *
 			 * @param string $title_text Default title text for the WordPress.org link.
 			 */
+/*
 			echo apply_filters( 'widget_meta_poweredby', sprintf( '<li><a href="%s" title="%s">%s</a></li>',
 				esc_url( __( 'https://wordpress.org/' ) ),
 				esc_attr__( 'Powered by WordPress, state-of-the-art semantic personal publishing platform.' ),
 				_x( 'WordPress.org', 'meta widget link text' )
 			) );
-
+*/
 			wp_meta();
 ?>
 			</ul>
