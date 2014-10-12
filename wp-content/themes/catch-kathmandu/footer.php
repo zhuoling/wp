@@ -93,7 +93,7 @@
 /** 
  * catchkathmandu_after hook
  */
-do_action( 'catchkathmandu_after' );
+// do_action( 'catchkathmandu_after' );
 
 wp_footer(); ?>
 

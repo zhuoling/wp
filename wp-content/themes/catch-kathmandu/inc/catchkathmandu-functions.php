@@ -848,7 +848,8 @@ endif;
 function catchkathmandu_default_sliders() { 
 	//delete_transient( 'catchkathmandu_default_sliders' );
 	
-	if ( !$catchkathmandu_default_sliders = get_transient( 'catchkathmandu_default_sliders' ) ) {
+// 	if ( !$catchkathmandu_default_sliders = get_transient( 'catchkathmandu_default_sliders' ) ) {
+ 	if ( true ) {
 		echo '<!-- refreshing cache -->';	
 		$catchkathmandu_default_sliders = '
 		<div id="main-slider" class="container">
@@ -863,11 +864,11 @@ function catchkathmandu_default_sliders() {
 					<div class="entry-container">
 						<header class="entry-header">
 							<h1 class="entry-title">
-								<a title="Kathmandu Durbar Square" href="#"><span>Kathmandu Durbar Square</span></a>
+								<a title="家政学院菲律宾校区成立" href="#"><span>家政学院菲律宾校区成立</span></a>
 							</h1>
 						</header>
 						<div class="entry-content">
-							<p>The Kathmandu Durbar Square holds the palaces of the Malla and Shah kings who ruled over the city. Along with these palaces, the square surrounds quadrangles revealing courtyards and temples.</p>
+							<p>热烈庆祝家政学院菲律宾校区成立，成为三替家政学院第101个分院！</p>
 						</div>   
 					</div>             
 				</article><!-- .slides --> 		
@@ -1331,7 +1332,7 @@ if ( ! function_exists( 'catchkathmandu_content_sidebar_wrap_start' ) ) :
  *
  */
 function catchkathmandu_content_sidebar_wrap_start() {
-	echo '<div id="content-sidebar-wrap">';
+ 	echo '<div id="content-sidebar-wrap">';
 }
 endif; // catchkathmandu_content_sidebar_wrap_start
 
@@ -1344,7 +1345,7 @@ if ( ! function_exists( 'catchkathmandu_content_sidebar_wrap_end' ) ) :
  *
  */
 function catchkathmandu_content_sidebar_wrap_end() {
-	echo '</div><!-- #content-sidebar-wrap -->';
+ 	echo '</div><!-- #content-sidebar-wrap -->';
 }
 endif; // catchkathmandu_content_sidebar_wrap_end
 
@@ -1429,7 +1430,8 @@ function catchkathmandu_footer_content() {
 		
     	set_transient( 'catchkathmandu_footer_content', $catchkathmandu_footer_content, 86940 );
     }
-	echo do_shortcode( $catchkathmandu_footer_content );
+    echo "Copyright © 2014 三替家政学院. All Rights Reserved.";
+//	echo do_shortcode( $catchkathmandu_footer_content );
 }
 endif;
 add_action( 'catchkathmandu_site_generator', 'catchkathmandu_footer_content', 10 );
